@@ -1,0 +1,38 @@
+[
+    {
+        "userid": "1",
+        "username": "admin",
+        "email": "admin@mail.com",
+        "title": "superadmin"
+    },
+    {
+        "userid": "2",
+        "username": "Mary",
+        "email": "mary@mail.com",
+        "title": "groupadmin"
+    },
+    {
+        "userid": "3",
+        "username": "Daxton",
+        "email": "daxton@mail.com",
+        "title": "groupadmin"
+    },
+    {
+        "userid": "4",
+        "username": "Alexa",
+        "email": "alexa@mail.com",
+        "title": "user"
+    },
+    {
+        "userid": "5",
+        "username": "Martin",
+        "email": "martin@mail.com",
+        "title": "user"
+    },
+    {
+        "userid": "6",
+        "username": "Lin",
+        "email": "lin@mail.com",
+        "title": "user"
+    }
+]

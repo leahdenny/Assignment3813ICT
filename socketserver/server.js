@@ -7,13 +7,24 @@ io.on('connection', function(socket) {
 
     socket.emit('test event', 'new connection');
 
+    //New user joining a room
     socket.on('join', function(data) {
         socket.join(data.room);
         console.log(data.user + ' joined the room: ' + data.room);
         socket.broadcast.to(data.room).emit('new user joined', {user:data.user, message:' has joined this room.'});
+    });
+
+    //Existing user leaving a room
+    socket.on('leave', function(data) {
+        console.log(data.user + ' left the room: ' + data.room);
+        socket.broadcast.to(data.room).emit('left room', {user:data.user, message:' has left this room.'});
+        socket.leave(data.room);
     });
 });
 
 server.listen(3000, () => {
     console.log('Socket.io server is listening on port 3000');
 });
+
+app.post('/login', require('./router/postLogin'));
+app.post('/loginafter', require('./router/postLoginafter'));
