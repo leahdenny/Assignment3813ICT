@@ -8,7 +8,7 @@ module.exports = function(req, res){
         "title": req.body.title
     }
     let uArray = [];
-    fs.readFile('./extendeduserdata.json', 'utf8', function(err, data){
+    fs.readFile('./userdata.json', 'utf8', function(err, data){
         if (err) throw err;
         uArray = JSON.parse(data);
         console.log(userobj);
@@ -18,7 +18,7 @@ module.exports = function(req, res){
         }
         res.send(uArray);
         let uArrayjson = JSON.stringify(uArray);
-        fs.writeFile('./extendeduserdata.json', uArrayjson, 'utf-8', function(err, data){
+        fs.writeFile('./userdata.json', uArrayjson, 'utf-8', function(err, data){
             if (err) throw err;
         });
     });
